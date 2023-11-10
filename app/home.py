@@ -17,6 +17,7 @@ ac.render_cta()
 home_title = "GPT Lab"
 home_introduction = "Welcome to GPT Lab, where the power of OpenAI's GPT technology is at your fingertips. Socialize with pre-trained AI Assistants in the Lounge or create your own custom AI companions in the Lab. Whether you need a personal helper, writing partner, or more, GPT Lab has you covered. Join now and start exploring the endless possibilities!"
 home_privacy = "At GPT Lab, your privacy is our top priority. To protect your personal information, our system only uses the hashed value of your OpenAI API Key, ensuring complete privacy and anonymity. Your API key is only used to access AI functionality during each visit, and is not stored beyond that time. This means you can use GPT Lab with peace of mind, knowing that your data is always safe and secure."
+home_fork = "This is a fork of d2clin's repo. You can find the original repo [here](https://github.com/d2clin/gpt-3-labs)."
 
 st.markdown(
     "<style>#MainMenu{visibility:hidden;}</style>",
@@ -29,6 +30,7 @@ st.markdown(f"""# {home_title} <span style=color:#2E9BF5><font size=5>Beta</font
 st.markdown("""\n""")
 st.markdown("#### Greetings")
 st.write(home_introduction)
+st.write(home_fork)
 
 #st.markdown("---")
 ac.robo_avatar_component()

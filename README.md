@@ -1,6 +1,8 @@
 # GPT Lab 
 
 ## Description 
+Please Note: This is a fork of d2clin's OG project for GPT Lab on Streamlit
+
 GPT Lab is a user-friendly [Streamlit](https://streamlit.io) app that lets users interact with and create their own AI Assistants powered by OpenAI's GPT language model. With GPT Lab, users can chat with pre-built AI Assistants or create their own by specifying a prompt and OpenAI model parameters. Our goal is to make AI accessible and easy to use for everyone, so users can focus on designing their Assistants without worrying about the underlying infrastructure.
 
 GPT Lab is also featured in the [Streamlit App Gallery](https://streamlit.io/gallery) among other impressive Streamlit apps.
@@ -142,18 +144,17 @@ To run the app locally, you will need to:
     - GPT Lab uses four main collections: `users`, `user_hash`, `bots`, and `sessions`.
     - You will need to manually set up a `users` collection before you can run the app locally. (All other collections will be set up by the app). 
 2. Clone this repository
-3. Create a .streamlit/secrets.toml file containing the following:
+3. Get your FireBase JSON secret from https://console.firebase.google.com/u/0/project/<Your DB Name>/settings/serviceaccounts/adminsdk and "Generate new private key"
+4. Run key-to-toml.py to convert the JSON secret to a TOML file.
+5. Confirm a .streamlit/secrets.toml file containing the following:
 ```
 [firestore]
 db-key = "YOUR GOOGLE SERVICE ACCOUNT TOML"
 
-[util]
-global_salt = "OPTIONAL GLOBAL SALT"
 ```
+exists
 
-- You will need to generate a service account JSON and convert that JSON file to TOML. Follow the instructions [here](https://blog.streamlit.io/streamlit-firestore-continued/). 
-
-4. In your terminal, set up your local environment: 
+6. In your terminal, set up your local environment: 
     - Set up a Python virtual environment (using `venv`, `conda`, `virtualenv`, or any other tool you prefer)
     - Install the required Python dependencies (`pip install -r app/requirements.txt`)
     - Run `streamlit run app/home.py`
